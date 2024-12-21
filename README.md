@@ -1,10 +1,12 @@
+[![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml)
+
 # Getting Started
 
 ### Requirements:
 
 ```
-Git: 2.47.0
-Spring Boot: 3.4.0
+Git: 2.47.1
+Spring Boot: 3.4.1
 Maven: 3.9+
 Java: 17
 Docker Desktop: Tested on 4.36.0
@@ -36,6 +38,7 @@ docker run -p 8080:8080 --name spring-boot-3-openapi-3 deepaksorthiya/spring-boo
 ```
 
 ### Testing Endpoints
+
 http://localhost:8080/swagger-ui.html
 
 ### Reference Documentation
