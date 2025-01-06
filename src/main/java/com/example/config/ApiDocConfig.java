@@ -1,10 +1,9 @@
 package com.example.config;
 
 import io.swagger.v3.oas.models.info.Info;
-import org.springdoc.core.customizers.ActuatorOpenApiCustomizer;
-import org.springdoc.core.customizers.ActuatorOperationCustomizer;
+import org.springdoc.core.customizers.OpenApiCustomizer;
+import org.springdoc.core.customizers.OperationCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
-import org.springdoc.core.properties.SpringDocConfigProperties;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties;
 import org.springframework.context.annotation.Bean;
@@ -15,17 +14,19 @@ import static org.springdoc.core.utils.Constants.ALL_PATTERN;
 
 @Configuration
 public class ApiDocConfig {
+
     @Bean
     @Profile("!prod")
-    public GroupedOpenApi actuatorApi(WebEndpointProperties endpointProperties,
-                                      SpringDocConfigProperties springDocConfigProperties,
+    public GroupedOpenApi actuatorApi(OpenApiCustomizer actuatorOpenApiCustomizer,
+                                      OperationCustomizer actuatorCustomizer,
+                                      WebEndpointProperties endpointProperties,
                                       @Value("${springdoc.version}") String appVersion) {
         return GroupedOpenApi.builder()
                 .group("actuator").displayName("Spring Boot Actuator")
                 .pathsToMatch(endpointProperties.getBasePath() + ALL_PATTERN)
-                .addOpenApiCustomizer(new ActuatorOpenApiCustomizer(endpointProperties))
+                .addOpenApiCustomizer(actuatorOpenApiCustomizer)
                 .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("Actuator API").version(appVersion)))
-                .addOperationCustomizer(new ActuatorOperationCustomizer(springDocConfigProperties))
+                .addOperationCustomizer(actuatorCustomizer)
                 .pathsToExclude("/health/*")
                 .build();
     }
