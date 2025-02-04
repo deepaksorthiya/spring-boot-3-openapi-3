@@ -1,15 +1,20 @@
 [![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml)
+---
+
+### ** Spring Boot 3 OpenAPI 3 **
+
+---
 
 # Getting Started
 
 ### Requirements:
 
 ```
-Git: 2.47.1
-Spring Boot: 3.4.2
+Git: 2.49
+Spring Boot: 3.4.4
 Maven: 3.9+
 Java: 17
-Docker Desktop: Tested on 4.36.0
+Docker Desktop: Tested on 4.39.0
 ```
 
 ### Clone this repository:
