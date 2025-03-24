@@ -1,4 +1,10 @@
 [![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-openapi-3/actions/workflows/maven-build.yml)
+[![Docker Hub badge][dockerhub-badge]][dockerhub]
+
+[dockerhub-badge]: https://img.shields.io/docker/pulls/deepaksorthiya/spring-boot-3-openapi-3
+
+[dockerhub]: https://hub.docker.com/repository/docker/deepaksorthiya/spring-boot-3-openapi-3
+
 ---
 
 ### ** Spring Boot 3 OpenAPI 3 **
