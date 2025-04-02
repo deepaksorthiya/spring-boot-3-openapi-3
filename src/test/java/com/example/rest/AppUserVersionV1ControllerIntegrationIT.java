@@ -12,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Transactional
-public class AppUserVersionV1ControllerIntegrationTest extends AbstractApplicationTests {
+public class AppUserVersionV1ControllerIntegrationIT extends AbstractApplicationTests {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppUserVersionV1ControllerIntegrationTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppUserVersionV1ControllerIntegrationIT.class);
 
     @BeforeAll
     public static void beforeAll() {

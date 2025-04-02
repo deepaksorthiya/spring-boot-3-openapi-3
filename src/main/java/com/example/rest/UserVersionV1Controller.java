@@ -28,12 +28,12 @@ public class UserVersionV1Controller {
         return new ResponseEntity<>(userService.save(appUser), HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "{userId}", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = "{userId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<AppUser> getUser(@PathVariable long userId, @RequestHeader HttpHeaders httpHeaders) {
         return new ResponseEntity<>(userService.findById(userId).get(), HttpStatus.OK);
     }
 
-    @GetMapping(produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<Page<AppUser>> findAll(@NotNull @ParameterObject final Pageable pageable,
                                                  @RequestHeader HttpHeaders httpHeaders) {
         return new ResponseEntity<>(userService.findAll(pageable), HttpStatus.OK);

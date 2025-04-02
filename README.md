@@ -42,6 +42,12 @@ cd spring-boot-3-openapi-3
 ./mvnw spring-boot:run
 ```
 
+### Run Tests:
+
+```bash
+./mvnw clean verify
+```
+
 ### (Optional)Build Docker Image(Docker should be running)
 
 ```bash
