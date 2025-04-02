@@ -35,7 +35,7 @@ public class AppUserVersionV1ControllerIntegrationTest extends AbstractApplicati
 
     private ResponseEntity<AppUser> getResponse(String version) {
         String rootUri = testRestTemplate.getRootUri();
-        AppUser appUser = new AppUser(0, "fff@gmail.com" + version, "sfsdfs" + version, "fsdfsdfs0" + version);
+        AppUser appUser = new AppUser("fff@gmail.com" + version, "sfsdfs" + version, "fsdfsdfs0" + version);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<AppUser> entity = new HttpEntity<>(appUser, headers);

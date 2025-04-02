@@ -30,6 +30,12 @@ git clone https://github.com/deepaksorthiya/spring-boot-3-openapi-3.git
 cd spring-boot-3-openapi-3
 ```
 
+### Build Project
+
+```bash
+./mvnw clean package
+```
+
 ### Run Project:
 
 ```bash

@@ -4,7 +4,6 @@ import com.example.model.AppUser;
 import com.example.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -15,8 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v2/users")
 public class UserVersionV2Controller {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserVersionV2Controller(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<AppUser> save(@RequestBody @Valid AppUser appUser) {

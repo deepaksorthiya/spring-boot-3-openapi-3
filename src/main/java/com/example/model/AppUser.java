@@ -28,8 +28,7 @@ public class AppUser {
         // jpa
     }
 
-    public AppUser(long userId, String email, String firstName, String lastName) {
-        this.userId = userId;
+    public AppUser(String email, String firstName, String lastName) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
