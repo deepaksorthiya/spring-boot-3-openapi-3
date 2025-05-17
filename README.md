@@ -64,16 +64,20 @@ docker run -p 8080:8080 --name spring-boot-3-openapi-3 deepaksorthiya/spring-boo
 
 http://localhost:8080/swagger-ui.html
 
+Test content negotiation APIs
+Postman
+Collection [Link](https://www.postman.com/deepaksorthiya/workspace/public-ws/collection/12463530-ba448821-b03d-4d5d-b0a1-9b9d1fc6cac0?action=share&creator=12463530&active-environment=12463530-55c10ebe-548f-4c1b-a5ec-4d4ed996c033)
+
 ## Reference Documentation
 
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.0/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.0/maven-plugin/build-image.html)
-* [Spring Boot Actuator](https://docs.spring.io/spring-boot/3.4.0/reference/actuator/index.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.0/reference/web/servlet.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.0/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/current/maven-plugin/build-image.html)
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/current/reference/actuator/index.html)
+* [Spring Web](https://docs.spring.io/spring-boot/current/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/current/reference/data/sql.html#data.sql.jpa-and-spring-data)
 
 ## Guides
 
