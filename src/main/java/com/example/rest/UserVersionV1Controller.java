@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,17 +22,17 @@ public class UserVersionV1Controller {
         this.userService = userService;
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping
     public ResponseEntity<AppUser> save(@RequestBody @Valid AppUser appUser, @RequestHeader HttpHeaders httpHeaders) {
         return new ResponseEntity<>(userService.save(appUser), HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "{userId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @GetMapping(value = "{userId}")
     public ResponseEntity<AppUser> getUser(@PathVariable long userId, @RequestHeader HttpHeaders httpHeaders) {
         return new ResponseEntity<>(userService.findById(userId).get(), HttpStatus.OK);
     }
 
-    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @GetMapping
     public ResponseEntity<Page<AppUser>> findAll(@NotNull @ParameterObject final Pageable pageable,
                                                  @RequestHeader HttpHeaders httpHeaders) {
         return new ResponseEntity<>(userService.findAll(pageable), HttpStatus.OK);

@@ -18,7 +18,6 @@ public class ApiDocConfig {
     @Bean
     @Profile("!prod")
     public GroupedOpenApi actuatorApi(OpenApiCustomizer actuatorOpenApiCustomizer,
-                                      OperationCustomizer actuatorCustomizer,
                                       WebEndpointProperties endpointProperties,
                                       @Value("${springdoc.version}") String appVersion) {
         return GroupedOpenApi.builder()
@@ -26,7 +25,6 @@ public class ApiDocConfig {
                 .pathsToMatch(endpointProperties.getBasePath() + ALL_PATTERN)
                 .addOpenApiCustomizer(actuatorOpenApiCustomizer)
                 .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("Actuator API").version(appVersion)))
-                .addOperationCustomizer(actuatorCustomizer)
                 .pathsToExclude("/health/*")
                 .build();
     }

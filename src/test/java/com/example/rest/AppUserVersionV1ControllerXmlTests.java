@@ -22,8 +22,7 @@ class AppUserVersionV1ControllerXmlTests {
     @Test
     void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/api/v1/users/1").accept(MediaType.APPLICATION_XML)).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_XML))
+                .andExpect(content().contentType("application/xml;charset=UTF-8"))
                 .andExpect(xpath("/AppUser/email").string(equalTo("auser@gmail.com")));
-        ;
     }
 }

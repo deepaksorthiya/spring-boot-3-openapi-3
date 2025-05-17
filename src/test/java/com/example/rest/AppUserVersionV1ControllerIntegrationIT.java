@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Transactional
@@ -25,19 +28,21 @@ public class AppUserVersionV1ControllerIntegrationIT extends AbstractApplication
     public void save_api_v1_return201() {
         ResponseEntity<AppUser> response = getResponse("v1");
         assertTrue(response.getStatusCode() == HttpStatus.CREATED);
+        assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);
     }
 
     @Test
     public void save_api_v2_return201() {
         ResponseEntity<AppUser> response = getResponse("v2");
         assertTrue(response.getStatusCode() == HttpStatus.CREATED);
+        assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);
     }
 
     private ResponseEntity<AppUser> getResponse(String version) {
         String rootUri = testRestTemplate.getRootUri();
         AppUser appUser = new AppUser("fff@gmail.com" + version, "sfsdfs" + version, "fsdfsdfs0" + version);
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         HttpEntity<AppUser> entity = new HttpEntity<>(appUser, headers);
         ResponseEntity<AppUser> response = testRestTemplate.postForEntity(rootUri + "/api/" + version + "/users", entity, AppUser.class);
         return response;
