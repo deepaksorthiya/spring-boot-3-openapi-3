@@ -16,8 +16,8 @@
 ## Requirements:
 
 ```
-Git: 2.49.0
-Spring Boot: 3.5.0
+Git: 2.51.0
+Spring Boot: 3.5.6
 Maven: 3.9+
 Java: 24
 Docker Desktop: Tested on 4.41.0
